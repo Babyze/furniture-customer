@@ -9,6 +9,9 @@ interface EnvConfig {
     refreshTokenKey: string;
     userKey: string;
   };
+  cart: {
+    key: string;
+  };
 }
 
 const envConfig: EnvConfig = {
@@ -21,6 +24,9 @@ const envConfig: EnvConfig = {
     tokenKey: import.meta.env.VITE_TOKEN_KEY ?? '',
     refreshTokenKey: import.meta.env.VITE_REFRESH_TOKEN_KEY ?? '',
     userKey: import.meta.env.VITE_USER_KEY ?? '',
+  },
+  cart: {
+    key: import.meta.env.VITE_CART_KEY ?? '',
   },
 };
 
