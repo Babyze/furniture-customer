@@ -1,6 +1,7 @@
 import { ProductCard } from '@src/components/ProductCard/ProductCard';
 import { Loading } from '@src/components/ui/Loading';
 import { LoadMoreButton } from '@src/components/ui/LoadMoreButton';
+import { Button } from '@src/components/ui/Button';
 import { ALL_CATEGORY_DEFAULT } from '@src/constants/category.constant';
 import { PAGINATION_CONSTANT } from '@src/constants/pagination.constant';
 import { Category } from '@src/models/category.model';
@@ -18,6 +19,7 @@ const Home = () => {
   const [categories, setCategories] = useState<Category[]>([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [hasMore, setHasMore] = useState(true);
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
   useEffect(() => {
     const fetchCategories = async () => {
@@ -73,7 +75,9 @@ const Home = () => {
   return (
     <div className="product-list">
       <div className="product-list__content">
-        <aside className="product-list__sidebar">
+        <aside
+          className={`product-list__sidebar ${isSidebarOpen ? 'product-list__sidebar--open' : ''}`}
+        >
           <div className="product-list__filter">
             <h3>CATEGORIES</h3>
             <div className="product-list__categories-wrapper">
@@ -83,7 +87,10 @@ const Home = () => {
                   className={`product-list__category ${
                     selectedCategory === ALL_CATEGORY_DEFAULT.id ? 'active' : ''
                   }`}
-                  onClick={() => setSelectedCategory(ALL_CATEGORY_DEFAULT.id)}
+                  onClick={() => {
+                    setSelectedCategory(ALL_CATEGORY_DEFAULT.id);
+                    setIsSidebarOpen(false);
+                  }}
                 >
                   {ALL_CATEGORY_DEFAULT.name}
                 </li>
@@ -93,7 +100,10 @@ const Home = () => {
                     className={`product-list__category ${
                       selectedCategory === category.id ? 'active' : ''
                     }`}
-                    onClick={() => setSelectedCategory(category.id)}
+                    onClick={() => {
+                      setSelectedCategory(category.id);
+                      setIsSidebarOpen(false);
+                    }}
                   >
                     {category.name}
                   </li>
@@ -103,8 +113,14 @@ const Home = () => {
           </div>
         </aside>
         <main className="product-list__main">
+          <Button
+            variant="secondary"
+            className="product-list__toggle-sidebar"
+            onClick={() => setIsSidebarOpen(!isSidebarOpen)}
+          >
+            {isSidebarOpen ? 'Close Filters' : 'Open Filters'}
+          </Button>
           <ProductList isLoading={isLoading} products={products} />
-
           <LoadMoreButton isLoading={isLoadingMore} hasMore={hasMore} onClick={handleLoadMore} />
         </main>
       </div>

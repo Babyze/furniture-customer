@@ -12,7 +12,6 @@ const Navbar = () => {
   const { items } = useCart();
 
   const cartItemCount = items.reduce((total, item) => total + item.quantity, 0);
-  console.log(cartItemCount);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -22,7 +21,7 @@ const Navbar = () => {
     <nav className="navbar">
       <div className="navbar__container">
         <Link to="/" className="navbar__logo">
-          3legant.
+          Furniture.
         </Link>
 
         <div className="navbar__actions">
