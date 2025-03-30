@@ -1,5 +1,5 @@
-import { createBrowserRouter } from 'react-router';
 import { ROUTES } from '@src/constants/routes';
+import { createBrowserRouter } from 'react-router';
 
 // Layouts
 import AuthLayout from '@src/components/layouts/AuthLayout';
@@ -13,8 +13,6 @@ import SignIn from '@src/pages/auth/SignIn';
 
 // Main pages
 import Home from '@src/pages/home/Home';
-import Products from '@src/pages/products/Products';
-import ProductDetail from '@src/pages/products/ProductDetail';
 
 // Error pages
 import NotFound from '@src/pages/error/NotFound';
@@ -27,14 +25,6 @@ export const router = createBrowserRouter([
       {
         index: true,
         element: <Home />,
-      },
-      {
-        path: ROUTES.PRODUCTS,
-        element: <Products />,
-      },
-      {
-        path: ROUTES.PRODUCT_DETAIL,
-        element: <ProductDetail />,
       },
     ],
   },

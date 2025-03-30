@@ -6,18 +6,20 @@ import { Button } from '../ui/Button';
 interface ProductCardProps {
   id: string;
   name: string;
-  price: number;
+  minPrice: number;
+  maxPrice: number;
   image: string;
 }
 
-export const ProductCard = ({ id, name, price, image }: ProductCardProps) => {
+export const ProductCard = ({ id, name, minPrice, maxPrice, image }: ProductCardProps) => {
   const { addItem } = useCart();
 
   const handleAddToCart = () => {
     addItem({
       id,
       name,
-      price,
+      minPrice,
+      maxPrice,
       image,
     });
   };
@@ -25,7 +27,11 @@ export const ProductCard = ({ id, name, price, image }: ProductCardProps) => {
   return (
     <div className="product-card">
       <div className="product-card__image-container">
-        <img src={image} alt={name} className="product-card__image" />
+        <img
+          src={image ? `http://${image}` : '/public/unknown-image-product.png'}
+          alt={name}
+          className="product-card__image"
+        />
 
         <Button variant="primary" className="product-card__add-to-cart" onClick={handleAddToCart}>
           Add to Cart
@@ -36,7 +42,8 @@ export const ProductCard = ({ id, name, price, image }: ProductCardProps) => {
           {name}
         </Link>
         <div className="product-card__prices">
-          <span className="product-card__price">${price.toFixed(2)}</span>
+          <span className="product-card__price">${minPrice.toFixed(2)}</span>
+          <span className="product-card__price">${maxPrice.toFixed(2)}</span>
         </div>
       </div>
     </div>
