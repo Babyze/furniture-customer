@@ -10,4 +10,4 @@ export const ROUTES = {
   PRODUCT_DETAIL: '/products/:id',
   CART: '/cart',
   NOT_FOUND: '*',
-} as const;
+};

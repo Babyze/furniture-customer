@@ -16,6 +16,7 @@ import Home from '@src/pages/home/Home';
 
 // Error pages
 import NotFound from '@src/pages/error/NotFound';
+import SignUp from '@src/pages/auth/SignUp';
 
 export const router = createBrowserRouter([
   {
@@ -37,6 +38,14 @@ export const router = createBrowserRouter([
         element: (
           <PublicRoute>
             <SignIn />
+          </PublicRoute>
+        ),
+      },
+      {
+        path: ROUTES.AUTH.SIGN_UP,
+        element: (
+          <PublicRoute>
+            <SignUp />
           </PublicRoute>
         ),
       },
