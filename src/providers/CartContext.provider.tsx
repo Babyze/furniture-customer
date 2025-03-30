@@ -1,8 +1,16 @@
+import envConfig from '@src/config/env-config.config';
 import { CartContext, CartItem } from '@src/contexts/CartContext.context';
-import { ReactNode, useState } from 'react';
+import { ReactNode, useEffect, useState } from 'react';
 
 export const CartProvider = ({ children }: { children: ReactNode }) => {
-  const [items, setItems] = useState<CartItem[]>([]);
+  const [items, setItems] = useState<CartItem[]>(() => {
+    const savedCart = localStorage.getItem(envConfig.cart.key);
+    return savedCart ? JSON.parse(savedCart) : [];
+  });
+
+  useEffect(() => {
+    localStorage.setItem(envConfig.cart.key, JSON.stringify(items));
+  }, [items]);
 
   const addItem = (product: Omit<CartItem, 'quantity'>) => {
     setItems((currentItems) => {
