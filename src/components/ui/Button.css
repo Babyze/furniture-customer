@@ -1,0 +1,119 @@
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 500;
+  transition: all 0.2s;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+/* Variants */
+.button--primary {
+  background-color: var(--primary-500);
+  color: var(--white);
+  border: none;
+}
+
+.button--primary:hover {
+  background-color: var(--primary-600);
+}
+
+.button--primary:active {
+  background-color: var(--primary-700);
+}
+
+.button--secondary {
+  background-color: var(--gray-50);
+  color: var(--black);
+  border: none;
+}
+
+.button--secondary:hover {
+  background-color: var(--gray-100);
+}
+
+.button--secondary:active {
+  background-color: var(--gray-200);
+}
+
+.button--outline {
+  background-color: transparent;
+  color: var(--primary-500);
+  border: 1px solid var(--button-border-color);
+}
+
+.button--outline:hover {
+  background-color: var(--primary-50);
+}
+
+.button--outline:active {
+  background-color: var(--primary-100);
+}
+
+.button--ghost {
+  background-color: transparent;
+  color: var(--primary-500);
+  border: none;
+}
+
+.button--ghost:hover {
+  background-color: var(--primary-50);
+}
+
+.button--ghost:active {
+  background-color: var(--primary-100);
+}
+
+/* Sizes */
+.button--sm {
+  padding: var(--spacing-1) var(--spacing-3);
+  font-size: var(--text-sm);
+  height: 32px;
+}
+
+.button--md {
+  padding: var(--spacing-2) var(--spacing-4);
+  font-size: var(--text-base);
+  height: 40px;
+}
+
+.button--lg {
+  padding: var(--spacing-3) var(--spacing-6);
+  font-size: var(--text-lg);
+  height: 48px;
+}
+
+/* Full width */
+.button--full-width {
+  width: 100%;
+}
+
+/* Disabled state */
+.button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Loading state */
+.button--loading {
+  position: relative;
+  color: transparent;
+}
+
+.button--loading::after {
+  content: '';
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  border: 2px solid var(--white);
+  border-radius: 50%;
+  border-top-color: transparent;
+  animation: button-loading 0.6s linear infinite;
+}
+
+@keyframes button-loading {
+  to {
+    transform: rotate(360deg);
+  }
+} 

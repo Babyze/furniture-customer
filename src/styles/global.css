@@ -1,0 +1,96 @@
+:root {
+  /* Colors */
+  --primary-50: #ebfaf3;
+  --primary-100: #d7f4e7;
+  --primary-200: #b0ead0;
+  --primary-300: #88dfb8;
+  --primary-400: #61d5a1;
+  --primary-500: #38cb89; /* Base color */
+  --primary-600: #2fb77a;
+  --primary-700: #26a36c;
+  --primary-800: #1c8f5d;
+  --primary-900: #137b4f;
+
+  --black: #141718;
+  --white: #ffffff;
+
+  --gray-50: #f8f9fa;
+  --gray-100: #e8ecef;
+  --gray-200: #e8ecef;
+  --gray-300: #e8ecef;
+  --gray-400: #e8ecef;
+  --gray-500: #e8ecef;
+  --gray-600: #6c7275;
+  --gray-700: #6c7275;
+  --gray-800: #6c7275;
+  --gray-900: #6c7275;
+
+  --button-border-color: var(--primary-500);
+
+  /* Font sizes */
+  --text-xs: 0.75rem; /* 12px */
+  --text-sm: 0.875rem; /* 14px */
+  --text-base: 1rem; /* 16px */
+  --text-lg: 1.125rem; /* 18px */
+  --text-xl: 1.25rem; /* 20px */
+  --text-2xl: 1.5rem; /* 24px */
+
+  /* Spacing */
+  --spacing-1: 0.25rem; /* 4px */
+  --spacing-2: 0.5rem; /* 8px */
+  --spacing-3: 0.75rem; /* 12px */
+  --spacing-4: 1rem; /* 16px */
+  --spacing-6: 1.5rem; /* 24px */
+  --spacing-8: 2rem; /* 32px */
+
+  /* Border radius */
+  --radius-sm: 0.25rem; /* 4px */
+  --radius-md: 0.5rem; /* 8px */
+  --radius-lg: 1rem; /* 16px */
+
+  /* Box shadows */
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+/* Reset CSS */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  color: var(--black);
+  line-height: 1.5;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Common utility classes */
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-8);
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0 var(--spacing-4);
+  }
+}
