@@ -67,7 +67,6 @@
 }
 
 .product-list__categories-wrapper {
-  max-height: 300px;
   overflow-y: auto;
   padding-right: 0.5rem;
 }
@@ -105,11 +104,11 @@
 }
 
 .product-list__category:hover {
-  color: var(--primary);
+  color: var(--primary-500);
 }
 
 .product-list__category.active {
-  color: var(--primary);
+  color: var(--primary-500);
   font-weight: 500;
 }
 

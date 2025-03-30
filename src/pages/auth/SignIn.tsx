@@ -11,7 +11,7 @@ const SignIn = () => {
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
 
-  const from = location.state?.from?.pathname || ROUTES.DASHBOARD.ROOT;
+  const from = location.state?.from?.pathname || '';
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();

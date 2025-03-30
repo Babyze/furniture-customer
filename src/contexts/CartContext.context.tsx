@@ -3,7 +3,8 @@ import { createContext } from 'react';
 export interface CartItem {
   id: string;
   name: string;
-  price: number;
+  minPrice: number;
+  maxPrice: number | null;
   image: string;
   quantity: number;
 }

@@ -1,24 +1,21 @@
 export const API_ROUTES = {
   // Auth routes
   AUTH: {
-    LOGIN: '/seller/auth/signin',
-    LOGOUT: '/seller/auth/signout',
-    REFRESH_TOKEN: '/seller/auth/refresh-token',
+    LOGIN: '/customer/auth/signin',
+    LOGOUT: '/customer/auth/signout',
+    REFRESH_TOKEN: '/customer/auth/refresh-token',
   },
   PRODUCT: {
-    LIST: '/seller/products',
-    CREATE: '/seller/products',
-    GET_BY_ID: (id: number) => `/seller/products/${id}`,
-    GET_SPUS: (id: number) => `/seller/products/${id}/spus`,
-    GET_IMAGE: (id: number) => `/seller/products/${id}/images`,
-    UPLOAD_IMAGE: (id: number) => `/seller/products/${id}/images`,
-    UPDATE: (id: number) => `/seller/products/${id}`,
-    DELETE_IMAGE: (id: number) => `/seller/products/${id}/images`,
+    LIST: '/customer/products',
+    CREATE: '/customer/products',
+    GET_BY_ID: (id: number) => `/customer/products/${id}`,
+    GET_SPUS: (id: number) => `/customer/products/${id}/spus`,
+    GET_IMAGE: (id: number) => `/customer/products/${id}/images`,
   },
   CATEGORY: {
-    LIST: '/seller/categories',
+    LIST: '/customer/categories',
   },
   CATEGORY_AREA: {
-    LIST: '/seller/category-areas',
+    LIST: '/customer/category-areas',
   },
 };
