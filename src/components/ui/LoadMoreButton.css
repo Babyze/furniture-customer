@@ -1,0 +1,16 @@
+.load-more-button {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+  padding: 1rem 0;
+}
+
+.load-more-button button {
+  min-width: 200px;
+  background-color: var(--primary-500);
+  color: var(--white);
+}
+
+.load-more-button button:hover {
+  background-color: var(--primary-600);
+} 

@@ -1,3 +1,5 @@
+import { PaginationRequestQuery } from './pagination.model';
+
 export interface Product {
   id: number;
   name: string;
@@ -7,4 +9,8 @@ export interface Product {
   stock: number;
   categoryId: number;
   categoryAreaId: number;
+}
+
+export interface GetProductsQuery extends PaginationRequestQuery {
+  categoryId?: number;
 }

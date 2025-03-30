@@ -1,0 +1,3 @@
+export const PAGINATION_CONSTANT = {
+  ITEMS_PER_PAGE: 12,
+};
