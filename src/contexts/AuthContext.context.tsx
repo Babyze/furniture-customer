@@ -1,10 +1,5 @@
+import { User } from '@src/models/auth.model';
 import { createContext } from 'react';
-
-export interface User {
-  id: string;
-  email: string;
-  name: string;
-}
 
 interface AuthContextType {
   isAuthenticated: boolean;

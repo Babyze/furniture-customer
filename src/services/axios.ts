@@ -69,6 +69,10 @@ const refreshToken = async () => {
 const handleError = async (error: any) => {
   const originalRequest = error.config;
 
+  if (error.response?.status === 401 && originalRequest.url?.includes(API_ROUTES.AUTH.LOGIN)) {
+    throw new Error('Invalid login information');
+  }
+
   if (error.response?.status === 401 && !originalRequest._retry) {
     originalRequest._retry = true;
 

@@ -2,7 +2,7 @@ export const API_ROUTES = {
   // Auth routes
   AUTH: {
     LOGIN: '/customer/auth/signin',
-    LOGOUT: '/customer/auth/signout',
+    SIGN_UP: '/customer/auth/signup',
     REFRESH_TOKEN: '/customer/auth/refresh-token',
   },
   PRODUCT: {

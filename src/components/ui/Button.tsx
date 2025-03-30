@@ -1,23 +1,28 @@
-import { ButtonHTMLAttributes, ReactNode } from 'react';
+import { ReactNode } from 'react';
 import './Button.css';
 
-interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
-  children: ReactNode;
+interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+  icon?: ReactNode;
   variant?: 'primary' | 'secondary' | 'outline' | 'ghost';
   size?: 'sm' | 'md' | 'lg';
+  iconPosition?: 'left' | 'right';
+  isLoading?: boolean;
   fullWidth?: boolean;
-  className?: string;
 }
 
 export const Button = ({
   children,
+  icon,
+  iconPosition = 'left',
   variant = 'primary',
   size = 'md',
+  isLoading = false,
   fullWidth = false,
   className = '',
+  disabled,
   ...props
 }: ButtonProps) => {
-  const classes = [
+  const buttonClasses = [
     'button',
     `button--${variant}`,
     `button--${size}`,
@@ -28,8 +33,11 @@ export const Button = ({
     .join(' ');
 
   return (
-    <button className={classes} {...props}>
-      {children}
+    <button className={buttonClasses} disabled={disabled || isLoading} {...props}>
+      {icon && iconPosition === 'left' ? <span className="button__icon">{icon}</span> : null}
+      <span className="button__content">{children}</span>
+      {icon && iconPosition === 'right' ? <span className="button__icon">{icon}</span> : null}
+      {isLoading ? <span className="button__spinner" /> : null}
     </button>
   );
 };
