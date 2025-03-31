@@ -1,9 +1,19 @@
 import { PaginationRequestQuery } from './pagination.model';
 
+export interface ProductSpu {
+  name: string;
+  price: string;
+  quantity: number;
+}
+
 export interface Product {
   id: number;
   name: string;
+  description: string;
+  measurements: string;
   imageUrl: string;
+  categoryName: string;
+  categoryAreaName: string;
   minPrice: number;
   maxPrice: number;
   stock: number;
