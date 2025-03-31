@@ -14,6 +14,7 @@ export const API_ROUTES = {
   },
   ORDER: {
     PLACE_ORDER: '/customer/order',
+    GET_ORDERS: '/customer/orders',
   },
   CATEGORY: {
     LIST: '/customer/categories',

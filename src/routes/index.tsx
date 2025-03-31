@@ -19,6 +19,8 @@ import ProductDetail from '@src/pages/product/ProductDetail';
 import NotFound from '@src/pages/error/NotFound';
 import SignUp from '@src/pages/auth/SignUp';
 import Cart from '@src/pages/cart/Cart';
+import PrivateRoute from './PrivateRoute';
+import Orders from '@src/pages/orders/Orders';
 
 export const router = createBrowserRouter([
   {
@@ -36,6 +38,14 @@ export const router = createBrowserRouter([
       {
         path: ROUTES.CART,
         element: <Cart />,
+      },
+      {
+        path: ROUTES.ORDERS,
+        element: (
+          <PrivateRoute>
+            <Orders />
+          </PrivateRoute>
+        ),
       },
     ],
   },
