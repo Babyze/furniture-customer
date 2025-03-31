@@ -1,5 +1,6 @@
 import { API_ROUTES } from '@src/constants/api-routes.constant';
-import { OrderForm } from '@src/models/order.model';
+import { GetOrdersQuery, Order, OrderForm } from '@src/models/order.model';
+import { Pagination } from '@src/models/pagination.model';
 import { api } from './axios';
 
 interface PlaceOrderRequest {
@@ -26,6 +27,12 @@ class OrderService {
 
   async placeOrder(request: PlaceOrderRequest): Promise<void> {
     await api.post(API_ROUTES.ORDER.PLACE_ORDER, request);
+  }
+
+  async getOrders(query: GetOrdersQuery): Promise<Pagination<Order>> {
+    return api.get<Pagination<Order>>(API_ROUTES.ORDER.GET_ORDERS, {
+      params: query,
+    });
   }
 }
 
