@@ -1,4 +1,3 @@
-import { Loading } from '@src/components/ui/Loading';
 import Table, { Column, PaginationConfig } from '@src/components/ui/Table';
 import { Order } from '@src/models/order.model';
 import { orderService } from '@src/services/order.service';
@@ -82,10 +81,6 @@ const Orders = () => {
     },
   ];
 
-  if (loading) {
-    return <Loading />;
-  }
-
   return (
     <div className="orders">
       <h1 className="orders__title">Order history</h1>
@@ -94,6 +89,7 @@ const Orders = () => {
           <Table
             columns={columns}
             data={orders}
+            loading={loading}
             pagination={paginate}
             onPageChange={handlePageChange}
           />
