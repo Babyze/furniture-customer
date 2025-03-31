@@ -58,6 +58,15 @@
   color: var(--button-primary-hover);
 }
 
+.button--danger {
+  background-color: var(--error-500);
+  color: white;
+}
+
+.button--danger:hover:not(:disabled) {
+  background-color: var(--error-600);
+}
+
 /* Sizes */
 .button--sm {
   padding: 0.375rem 0.75rem;

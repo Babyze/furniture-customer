@@ -18,6 +18,7 @@ import ProductDetail from '@src/pages/product/ProductDetail';
 // Error pages
 import NotFound from '@src/pages/error/NotFound';
 import SignUp from '@src/pages/auth/SignUp';
+import Cart from '@src/pages/cart/Cart';
 
 export const router = createBrowserRouter([
   {
@@ -31,6 +32,10 @@ export const router = createBrowserRouter([
       {
         path: ROUTES.PRODUCT_DETAIL,
         element: <ProductDetail />,
+      },
+      {
+        path: ROUTES.CART,
+        element: <Cart />,
       },
     ],
   },

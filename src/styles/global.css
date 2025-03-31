@@ -25,6 +25,18 @@
   --gray-800: #6c7275;
   --gray-900: #6c7275;
 
+  --error-50: #fdecec;
+  --error-100: #fcd9d9;
+  --error-200: #f9b4b4;
+  --error-300: #f58e8e;
+  --error-400: #f26969;
+  --error-500: #ef4444;
+  --error-600: #e11313;
+  --error-700: #a90f0f;
+  --error-800: #710a0a;
+  --error-900: #380505;
+  --error-950: #1c0202;
+
   --button-border-color: var(--primary-500);
 
   /* Font sizes */

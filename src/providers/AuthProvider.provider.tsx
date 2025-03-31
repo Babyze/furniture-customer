@@ -1,3 +1,4 @@
+import envConfig from '@src/config/env-config.config';
 import { AuthContext } from '@src/contexts/AuthContext.context';
 import { User } from '@src/models/auth.model';
 import { authService } from '@src/services/auth.service';
@@ -13,9 +14,11 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
 
   useEffect(() => {
     // Check if user is logged in
-    const token = localStorage.getItem('token');
+    const token = localStorage.getItem(envConfig.auth.tokenKey);
     if (token) {
+      const user = localStorage.getItem(envConfig.auth.userKey);
       setIsAuthenticated(true);
+      setUser(user ? JSON.parse(user) : null);
     }
   }, []);
 
