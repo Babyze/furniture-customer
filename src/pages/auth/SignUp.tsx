@@ -51,7 +51,7 @@ const SignUp = () => {
     <div className="auth-container">
       <div className="auth-content">
         <div className="auth-image">
-          <img src="/public/sign-in-image.png" alt="Furniture" />
+          <img src="/sign-in-image.png" alt="Furniture" />
         </div>
         <div className="auth-form-container">
           <div className="auth-form-content">

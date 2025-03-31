@@ -70,7 +70,7 @@ const ProductDetail = () => {
       <div className="product-detail__container">
         <div className="product-detail__image">
           <img
-            src={product.imageUrl ? product.imageUrl : '/public/unknown-image-product.png'}
+            src={product.imageUrl ? product.imageUrl : '/unknown-image-product.png'}
             alt={product.name}
           />
         </div>
