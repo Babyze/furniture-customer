@@ -14,7 +14,7 @@ export const ProductCard = ({ id, name, minPrice, maxPrice, image }: ProductCard
     <Link to={`/products/${id}`} className="product-card">
       <div className="product-card__image-container">
         <img
-          src={image ? `http://${image}` : '/public/unknown-image-product.png'}
+          src={image ? image : '/public/unknown-image-product.png'}
           alt={name}
           className="product-card__image"
         />
