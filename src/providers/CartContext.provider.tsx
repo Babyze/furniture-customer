@@ -26,11 +26,11 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
     });
   };
 
-  const removeItem = (productId: string) => {
+  const removeItem = (productId: number) => {
     setItems((currentItems) => currentItems.filter((item) => item.id !== productId));
   };
 
-  const updateQuantity = (productId: string, quantity: number) => {
+  const updateQuantity = (productId: number, quantity: number) => {
     if (quantity < 1) {
       removeItem(productId);
       return;
