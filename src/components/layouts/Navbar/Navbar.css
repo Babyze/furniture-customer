@@ -87,6 +87,10 @@
   color: var(--primary-500);
 }
 
+.navbar__dropdown button {
+  font-size: var(--text-md);
+}
+
 .navbar__cart {
   position: relative;
 }
