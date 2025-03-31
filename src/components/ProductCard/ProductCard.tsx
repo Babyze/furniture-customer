@@ -22,7 +22,7 @@ export const ProductCard = ({ id, name, minPrice, maxPrice, image }: ProductCard
       <div className="product-card__content">
         <h3 className="product-card__name">{name}</h3>
         <div className="product-card__prices">
-          <span className="product-card__price">${minPrice.toFixed(2)}</span>
+          <span className="product-card__price">${minPrice.toFixed(2)}</span> -
           <span className="product-card__price">${maxPrice.toFixed(2)}</span>
         </div>
       </div>
