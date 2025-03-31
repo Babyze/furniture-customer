@@ -45,10 +45,11 @@ const ProductDetail = () => {
     if (!product || !selectedSpu) return;
 
     addItem({
-      id: product.id.toString(),
+      id: Number(product.id),
       name: selectedSpu.name,
-      minPrice: Number(selectedSpu.price),
-      maxPrice: Number(selectedSpu.price),
+      price: Number(selectedSpu.price),
+      spuId: selectedSpu.id,
+      skuId: selectedSpu.skuId,
       image: product.imageUrl,
     });
   };

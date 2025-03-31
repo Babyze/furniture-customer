@@ -12,6 +12,9 @@ export const API_ROUTES = {
     GET_SPUS: (id: number) => `/customer/products/${id}/spus`,
     GET_IMAGE: (id: number) => `/customer/products/${id}/images`,
   },
+  ORDER: {
+    PLACE_ORDER: '/customer/order',
+  },
   CATEGORY: {
     LIST: '/customer/categories',
   },

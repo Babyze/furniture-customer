@@ -1,6 +1,8 @@
 import { PaginationRequestQuery } from './pagination.model';
 
 export interface ProductSpu {
+  id: number;
+  skuId: number;
   name: string;
   price: string;
   quantity: number;
