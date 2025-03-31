@@ -13,7 +13,7 @@ export const API_ROUTES = {
     GET_IMAGE: (id: number) => `/customer/products/${id}/images`,
   },
   ORDER: {
-    PLACE_ORDER: '/customer/order',
+    PLACE_ORDER: '/customer/orders',
     GET_ORDERS: '/customer/orders',
   },
   CATEGORY: {
